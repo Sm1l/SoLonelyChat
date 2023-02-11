@@ -1,0 +1,5 @@
+@import "../abstracts/var";
+
+*:focus {
+  outline: $color-light-coral solid 1px;
+}

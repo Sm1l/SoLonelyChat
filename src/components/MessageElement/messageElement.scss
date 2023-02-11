@@ -1,0 +1,31 @@
+@import "../../abstracts/var";
+
+.message-element {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  padding: 10px 40px;
+
+  color: $color-blue;
+  font-size: inherit;
+  text-align: center;
+
+  border-radius: 12px;
+
+  background-color: $color-white;
+
+  box-shadow: inset 0px 0px 25px $color-light-blue;
+
+  &__name {
+    display: block;
+
+    color: $color-dark-blue;
+  }
+
+  &__text {
+    display: block;
+
+    text-align: start;
+  }
+}

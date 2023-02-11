@@ -1,0 +1,27 @@
+@import "../../abstracts/var";
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+
+  border-radius: 30px;
+
+  background-color: aliceblue;
+
+  box-shadow: inset 0px 0px 25px $color-light-blue;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  scroll-behavior: smooth;
+
+  &__no {
+    align-self: center;
+  }
+}

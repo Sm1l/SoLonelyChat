@@ -1,0 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap");
+@import "../abstracts/var";
+
+html,
+body {
+  color: $color-blue;
+  font-size: 22px;
+  font-family: "Fredericka the Great", cursive;
+  line-height: 160%;
+}

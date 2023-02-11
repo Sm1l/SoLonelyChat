@@ -1,0 +1,34 @@
+@import "../../abstracts/var";
+
+.register {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+
+  width: 600px;
+  padding: 100px;
+
+  border-radius: 50px;
+
+  background-color: aliceblue;
+
+  box-shadow: inset 0px 0px 25px $color-light-blue;
+
+  &__title {
+    font-size: 42px;
+  }
+
+  &__text {
+    font-size: 22px;
+  }
+
+  &__link {
+    color: $color-dark-blue;
+
+    &:hover {
+      color: $color-coral;
+    }
+  }
+}

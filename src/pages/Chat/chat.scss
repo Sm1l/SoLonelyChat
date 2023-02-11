@@ -1,0 +1,36 @@
+@import "../../abstracts/var";
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+
+  width: 95%;
+  height: 100%;
+  padding: 50px;
+
+  border-radius: 50px;
+
+  background-color: aliceblue;
+
+  box-shadow: inset 0px 0px 25px $color-light-blue;
+
+  &__title {
+    font-size: 42px;
+  }
+
+  &__text {
+    font-size: 22px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+
+    width: 100%;
+  }
+}
