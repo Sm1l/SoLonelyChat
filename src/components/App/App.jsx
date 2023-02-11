@@ -13,21 +13,18 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // console.log("handleSubmit");
     console.log(name);
     if (name === "") {
       console.log("Enter your name");
       return;
     } else {
       console.log("Name is", name);
-      // console.log(e.target.value);
-      setHomeIsVisible(false); //!менять state можно только в родителе? (не в дочернем компоненте)
+      setHomeIsVisible(false);
     }
   };
 
   return (
     <div className="App">
-      {/* <h1 className="app __title">appTitle</h1> */}
       <BrowserRouter>
         <Routes>
           <Route

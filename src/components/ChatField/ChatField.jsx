@@ -3,18 +3,22 @@ import "./chatfield.scss";
 
 import MessageElement from "../MessageElement/MessageElement";
 
-const ChatField = ({ messageList }) => {
-  const fieldRef = useRef();
+const ChatField = ({ messageList, fieldRef }) => {
+  // const fieldRef = useRef();
 
-  //* scroll bottom
-  useEffect(() => {
-    if (messageList?.length > 0) {
-      fieldRef.current.scrollTop = fieldRef.current.scrollHeight;
-      console.log("useEffect scroll-bottom");
-    }
-  }, [messageList]);
+  // //* scroll bottom
+  // const scrollToBottom = () => {
+  //   if (messageList?.length > 0) {
+  //     fieldRef.current.scrollTop = fieldRef.current.scrollHeight;
+  //     console.log("useEffect scroll-bottom");
+  //   }
+  // };
 
-  //todo потом подумать! возможно, при обновлении из второго окна, скролл у первого окна будет скроллиться вниз
+  // useEffect(() => {
+  //   scrollToBottom();
+  // }, []);
+
+  // //? делал зависимость от messageList, но теперь очень частое срабатывание!
 
   return (
     <>
