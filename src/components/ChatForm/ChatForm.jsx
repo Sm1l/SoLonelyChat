@@ -1,13 +1,14 @@
 import React from "react";
-import "./chatForm.scss";
 import Input from "../Input/Input";
 import Button from "../Button/Button";
 
-const ChatForm = (name, text, setText, buttonSendClickHandle) => {
+import "./chatForm.scss";
+
+const ChatForm = ({ name, text, setText, submitSendClickHandle }) => {
   return (
-    <form action="" className="chat__form">
+    <form action="" className="chat__form" onSubmit={submitSendClickHandle}>
       <Input value={text} setValue={setText} text={`${name} is typing...`} />
-      <Button text={"Send Message"} type={"submit"} buttonClickHandle={buttonSendClickHandle} />
+      <Button text="Send Message" type="submit" />
     </form>
   );
 };

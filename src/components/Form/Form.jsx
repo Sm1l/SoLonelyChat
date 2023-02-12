@@ -1,7 +1,8 @@
 import React from "react";
-import "./form.scss";
 import Button from "../Button/Button";
 import Input from "../Input/Input";
+
+import "./form.scss";
 
 const Form = ({ name, setName, handleSubmit }) => {
   return (

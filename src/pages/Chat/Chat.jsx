@@ -1,12 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import { v4 as uuidv4 } from "uuid";
 
-import Input from "../../components/Input/Input";
-import Button from "../../components/Button/Button";
 import ChatField from "../../components/ChatField/ChatField";
 
 import "./chat.scss";
-// import ChatForm from "../../components/ChatForm/ChatForm";
+import ChatForm from "../../components/ChatForm/ChatForm";
 
 const Chat = ({ name }) => {
   const [text, setText] = useState("");
@@ -34,12 +32,12 @@ const Chat = ({ name }) => {
   //? делал зависимость от messageList, но теперь очень частое срабатывание, сделал отдельную ф-ю, но она плохо работает с добавлением 1 сообщения! (функция видит предпоследнее сообщение.)
 
   //*обновление LocalStorage. ок. Потом запустить.
-  useEffect(() => {
-    setInterval(() => {
-      setMessageList(JSON.parse(localStorage.getItem("soLonelyChat")));
-      console.log("Я сумасшедший UseEffect");
-    }, 1000);
-  }, []);
+  // useEffect(() => {
+  //   setInterval(() => {
+  //     setMessageList(JSON.parse(localStorage.getItem("soLonelyChat")));
+  //     console.log("Я сумасшедший UseEffect");
+  //   }, 1000);
+  // }, []);
 
   //todo useLocalStorage?
   useEffect(() => {
@@ -62,20 +60,17 @@ const Chat = ({ name }) => {
 
   const createMessageList = () => {
     setMessageList([...messageList, { name: name, text: text, id: uuidv4() }]);
-    console.log("function createMessageList", "messageList = ", messageList);
   };
 
   return (
     <div className="chat">
       <h1 className="chat__title">SoLonelyChat</h1>
       <ChatField name={name} messageList={messageList} fieldRef={fieldRef} />
-
-      {/* <ChatForm name={name} text={text} setText={setText} buttonSendClickHandle={buttonSendClickHandle} /> */}
-      <form action="" className="chat__form" onSubmit={submitSendClickHandle}>
+      <ChatForm name={name} text={text} setText={setText} submitSendClickHandle={submitSendClickHandle} />
+      {/* <form action="" className="chat__form" onSubmit={submitSendClickHandle}>
         <Input value={text} setValue={setText} text={`${name} is typing...`} />
-        <Button text={"Send Message"} type={"submit"} />
-      </form>
-      {/* вынести форму в отд компонент */}
+        <Button text="Send Message" type="submit" />
+      </form> */}
     </div>
   );
 };
