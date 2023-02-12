@@ -8,7 +8,7 @@ const RegisterPlease = () => {
     <div className="register">
       <h1 className="register__title">SoLonelyChat</h1>
       <p className="register__text">Ooops, something goes wrong!</p>
-      <NavLink to="/" className="register__link">
+      <NavLink to="/" className="link register__link">
         Register please!
       </NavLink>
     </div>

@@ -31,12 +31,12 @@ const Chat = ({ name }) => {
     scrollToBottom();
   }, []);
 
-  //? делал зависимость от messageList, но теперь очень частое срабатывание!
+  //? делал зависимость от messageList, но теперь очень частое срабатывание, сделал отдельную ф-ю, но она плохо работает с добавлением 1 сообщения! (функция видит предпоследнее сообщение.)
 
+  //*обновление LocalStorage. ок. Потом запустить.
   useEffect(() => {
     setInterval(() => {
       setMessageList(JSON.parse(localStorage.getItem("soLonelyChat")));
-      // localStorage.setItem("soLonelyChat", JSON.stringify(messageList));
       console.log("Я сумасшедший UseEffect");
     }, 1000);
   }, []);
@@ -48,13 +48,14 @@ const Chat = ({ name }) => {
 
   const submitSendClickHandle = (e) => {
     e.preventDefault();
-    if (text !== "") {
+    if (text.trim()) {
       createMessageList();
       console.log("send message", text); //todo send message
       scrollToBottom(); //! плохо работает если 1 элемент добавлять
       setText("");
     } else {
-      console.log("Please,enter a message");
+      console.log("Please, enter a message");
+      setText("");
     }
   };
   //*createMessageList

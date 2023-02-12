@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 import Form from "../../components/Form/Form";
 import Button from "../../components/Button/Button";
@@ -27,7 +27,12 @@ const Home = ({ name, setName, handleSubmit, homeIsVisible }) => {
         {homeIsVisible ? "Welcome, my lonely friend..." : `Welcome, ${name}, are you ready? `}
       </p>
       {homeIsVisible ? (
-        <Form name={name} setName={setName} handleSubmit={handleSubmit} />
+        <>
+          <Form name={name} setName={setName} handleSubmit={handleSubmit} />
+          <NavLink to="/readme" className="link home__link">
+            ReadMe
+          </NavLink>
+        </>
       ) : (
         <Button text={"Go chat!"} type={"button"} buttonClickHandle={buttonChatClickHandle} buttonRef={buttonRef} />
       )}

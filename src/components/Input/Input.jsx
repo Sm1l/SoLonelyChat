@@ -18,7 +18,6 @@ const Input = ({ value, setValue, text }) => {
   //todo --------------------------------------------
 
   const handleChange = (e) => {
-    console.log(e.target.value);
     setValue(e.target.value);
   };
 
