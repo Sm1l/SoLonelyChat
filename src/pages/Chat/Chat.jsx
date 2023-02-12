@@ -22,7 +22,7 @@ const Chat = ({ name }) => {
   const scrollToBottom = () => {
     if (messageList?.length > 0) {
       fieldRef.current.scrollTop = fieldRef.current.scrollHeight;
-      console.log(fieldRef.current);
+      // console.log(fieldRef.current);
       console.log("useEffect scroll-bottom");
     }
   };
@@ -68,7 +68,7 @@ const Chat = ({ name }) => {
   return (
     <div className="chat">
       <h1 className="chat__title">SoLonelyChat</h1>
-      <ChatField messageList={messageList} fieldRef={fieldRef} />
+      <ChatField name={name} messageList={messageList} fieldRef={fieldRef} />
 
       {/* <ChatForm name={name} text={text} setText={setText} buttonSendClickHandle={buttonSendClickHandle} /> */}
       <form action="" className="chat__form" onSubmit={submitSendClickHandle}>

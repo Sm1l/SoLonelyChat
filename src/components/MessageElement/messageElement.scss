@@ -9,7 +9,7 @@
 
   color: $color-blue;
   font-size: inherit;
-  text-align: center;
+  text-align: start;
 
   border-radius: 12px;
 
@@ -21,11 +21,20 @@
     display: block;
 
     color: $color-dark-blue;
+
+    &_right {
+      color: $color-coral;
+    }
   }
 
   &__text {
     display: block;
+  }
 
-    text-align: start;
+  &_right {
+    align-items: flex-end;
+    align-self: flex-end;
+
+    text-align: end;
   }
 }
