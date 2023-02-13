@@ -11,7 +11,7 @@ const ReadMe = () => {
         Dear friend!
         <br /> Welcome to SoLonelyChat! You have a unique opportunity to communicate with yourself, to express
         everything that worries you so much, but there was no time to admit it to yourself! <br />
-        So, open the chat in two browser windows, register and go ahead!.
+        So, open the chat in two browser windows, register and go ahead!
       </p>
       <NavLink to="/" className="readme__link">
         Start the chat!

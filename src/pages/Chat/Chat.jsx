@@ -32,12 +32,12 @@ const Chat = ({ name }) => {
   //? делал зависимость от messageList, но теперь очень частое срабатывание, сделал отдельную ф-ю, но она плохо работает с добавлением 1 сообщения! (функция видит предпоследнее сообщение.)
 
   //*обновление LocalStorage. ок. Потом запустить.
-  // useEffect(() => {
-  //   setInterval(() => {
-  //     setMessageList(JSON.parse(localStorage.getItem("soLonelyChat")));
-  //     console.log("Я сумасшедший UseEffect");
-  //   }, 1000);
-  // }, []);
+  useEffect(() => {
+    setInterval(() => {
+      setMessageList(JSON.parse(localStorage.getItem("soLonelyChat")));
+      console.log("Я сумасшедший UseEffect");
+    }, 1000);
+  }, []);
 
   //todo useLocalStorage?
   useEffect(() => {
@@ -67,10 +67,6 @@ const Chat = ({ name }) => {
       <h1 className="chat__title">SoLonelyChat</h1>
       <ChatField name={name} messageList={messageList} fieldRef={fieldRef} />
       <ChatForm name={name} text={text} setText={setText} submitSendClickHandle={submitSendClickHandle} />
-      {/* <form action="" className="chat__form" onSubmit={submitSendClickHandle}>
-        <Input value={text} setValue={setText} text={`${name} is typing...`} />
-        <Button text="Send Message" type="submit" />
-      </form> */}
     </div>
   );
 };
