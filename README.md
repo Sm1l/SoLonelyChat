@@ -1,4 +1,4 @@
-...loading
+https://sm1l.github.io/SoLonelyChat/
 
 So lonely chat! Welcome!
 
