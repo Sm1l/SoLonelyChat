@@ -34,3 +34,24 @@
     width: 100%;
   }
 }
+
+@media (max-width: 768px) {
+  .chat {
+    gap: 10px;
+
+    width: 100%;
+    padding: 20px;
+
+    &__title {
+      font-size: 24px;
+    }
+
+    &__text {
+      font-size: 16px;
+    }
+
+    &__form {
+      gap: 10px;
+    }
+  }
+}

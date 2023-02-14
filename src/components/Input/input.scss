@@ -90,3 +90,9 @@
 .input:focus ~ .placeholder {
   color: $color-coral;
 }
+
+@media (max-width: 768px) {
+  .input-container {
+    margin-top: 10px;
+  }
+}

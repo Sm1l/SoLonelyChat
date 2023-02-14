@@ -38,3 +38,9 @@
     text-align: end;
   }
 }
+
+@media (max-width: 768px) {
+  .message-element {
+    padding: 10px;
+  }
+}

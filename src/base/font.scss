@@ -1,10 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Maze&display=swap");
 @import "../abstracts/var";
 
 html,
 body {
   color: $color-blue;
   font-size: 22px;
-  font-family: "Fredericka the Great", cursive;
+  font-family: "Fredericka the Great", "Rubik Maze", cursive;
   line-height: 160%;
+}
+
+@media (max-width: 768px) {
+  html,
+  body {
+    font-size: 16px;
+  }
 }

@@ -17,3 +17,8 @@
 
   background-image: linear-gradient($color-white, $color-light-blue);
 }
+@media (max-width: 768px) {
+  .App {
+    padding: 10px;
+  }
+}

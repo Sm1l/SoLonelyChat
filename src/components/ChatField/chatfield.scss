@@ -25,3 +25,9 @@
     align-self: center;
   }
 }
+
+@media (max-width: 768px) {
+  .field {
+    padding: 10px;
+  }
+}
