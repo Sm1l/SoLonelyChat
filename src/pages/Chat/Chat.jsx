@@ -34,8 +34,9 @@ const Chat = ({ name }) => {
   //*проверка  обновления localStorage из другого окна
   useEffect(() => {
     const checkLocalStorage = setInterval(() => {
-      console.log("длина LocalStorage: ", JSON.parse(localStorage.getItem("soLonelyChat")).length, "из SetInterval");
-      console.log("длина messageList: ", messageList.length, "из SetInterval");
+      // console.log("длина LocalStorage: ", JSON.parse(localStorage.getItem("soLonelyChat")).length, "из SetInterval");
+      // console.log("длина messageList: ", messageList.length, "из SetInterval");
+      console.log("Я проверяю новые сообщения");
 
       setMessageList(() => {
         return messageList.length !== JSON.parse(localStorage.getItem("soLonelyChat")).length
