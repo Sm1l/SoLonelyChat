@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Route, BrowserRouter, Routes } from "react-router-dom";
+import { Route, BrowserRouter, HashRouter, Routes } from "react-router-dom";
 
 import Home from "../../pages/Home/Home";
 import Chat from "../../pages/Chat/Chat";
@@ -9,7 +9,7 @@ import ReadMe from "../../pages/ReadMe/ReadMe";
 import "./app.scss";
 
 function App() {
-  const [name, setName] = useState(""); //! нужен ли?
+  const [name, setName] = useState("");
   const [homeIsVisible, setHomeIsVisible] = useState(true);
 
   const handleSubmit = (e) => {
@@ -26,7 +26,7 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route
             path="/"
@@ -44,7 +44,7 @@ function App() {
           <Route path="/readme" element={<ReadMe />} />
           <Route path="*" element={<RegisterPlease />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }

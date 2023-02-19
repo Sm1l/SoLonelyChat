@@ -1,12 +1,20 @@
 import React, { useEffect, useRef } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import Form from "../../components/Form/Form";
 import Button from "../../components/Button/Button";
 
 import "./home.scss";
 
+// const Home = ({ name, setName, handleSubmit, homeIsVisible }) => {
 const Home = ({ name, setName, handleSubmit, homeIsVisible }) => {
+  //todo??----------------------------------------------------
+
+  // const name = useSelector((state) => state.user.name);
+
+  //todo??----------------------------------------------------
+
   let navigate = useNavigate();
 
   const buttonChatClickHandle = () => {

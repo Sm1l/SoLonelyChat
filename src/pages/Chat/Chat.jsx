@@ -14,34 +14,37 @@ const Chat = ({ name }) => {
   });
 
   //* scroll bottom
-
   const fieldRef = useRef();
 
   const scrollToBottom = () => {
     if (messageList?.length > 0) {
       fieldRef.current.scrollTop = fieldRef.current.scrollHeight;
-      // console.log(fieldRef.current);
       console.log("useEffect scroll-bottom");
     }
   };
 
   useEffect(() => {
-    scrollToBottom();
-  }, []);
-
-  //? делал зависимость от messageList, но теперь очень частое срабатывание, сделал отдельную ф-ю, но она плохо работает с добавлением 1 сообщения! (функция видит предпоследнее сообщение.)
-
-  //*обновление LocalStorage. ок. Потом запустить.
-  useEffect(() => {
-    setInterval(() => {
-      setMessageList(JSON.parse(localStorage.getItem("soLonelyChat")));
-      console.log("Я сумасшедший UseEffect");
-    }, 1000);
-  }, []);
-
-  //todo useLocalStorage?
-  useEffect(() => {
     localStorage.setItem("soLonelyChat", JSON.stringify(messageList));
+    scrollToBottom();
+  }, [messageList]);
+
+  //*проверка  обновления localStorage из другого окна
+
+  useEffect(() => {
+    const checkLocalStorage = setInterval(() => {
+      console.log("длина LocalStorage: ", JSON.parse(localStorage.getItem("soLonelyChat")).length, "из SetInterval");
+      console.log("длина messageList: ", messageList.length, "из SetInterval");
+
+      setMessageList(() => {
+        return messageList.length !== JSON.parse(localStorage.getItem("soLonelyChat")).length
+          ? JSON.parse(localStorage.getItem("soLonelyChat"))
+          : messageList; //!bad
+      });
+    }, 1000);
+
+    return () => {
+      clearInterval(checkLocalStorage); //!рассмотреть
+    };
   }, [messageList]);
 
   const submitSendClickHandle = (e) => {
@@ -49,7 +52,6 @@ const Chat = ({ name }) => {
     if (text.trim()) {
       createMessageList();
       console.log("send message", text); //todo send message
-      scrollToBottom(); //! плохо работает если 1 элемент добавлять
       setText("");
     } else {
       console.log("Please, enter a message");
