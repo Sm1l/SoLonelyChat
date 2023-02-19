@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/SoLonelyChat/static/css/main.61b6e509.css",
-    "main.js": "/SoLonelyChat/static/js/main.8b17ba35.js",
+    "main.js": "/SoLonelyChat/static/js/main.198d456c.js",
     "index.html": "/SoLonelyChat/index.html",
     "main.61b6e509.css.map": "/SoLonelyChat/static/css/main.61b6e509.css.map",
-    "main.8b17ba35.js.map": "/SoLonelyChat/static/js/main.8b17ba35.js.map"
+    "main.198d456c.js.map": "/SoLonelyChat/static/js/main.198d456c.js.map"
   },
   "entrypoints": [
     "static/css/main.61b6e509.css",
-    "static/js/main.8b17ba35.js"
+    "static/js/main.198d456c.js"
   ]
 }

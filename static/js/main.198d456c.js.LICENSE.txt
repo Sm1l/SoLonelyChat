@@ -110,4 +110,6 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-//! плохо работает если 1 элемент добавлять
+//!bad
+
+//!рассмотреть
