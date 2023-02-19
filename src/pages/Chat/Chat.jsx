@@ -22,14 +22,16 @@ const Chat = ({ name }) => {
       console.log("useEffect scroll-bottom");
     }
   };
+  const updateLocalStorage = () => {
+    localStorage.setItem("soLonelyChat", JSON.stringify(messageList));
+  };
 
   useEffect(() => {
-    localStorage.setItem("soLonelyChat", JSON.stringify(messageList));
+    updateLocalStorage();
     scrollToBottom();
   }, [messageList]);
 
   //*проверка  обновления localStorage из другого окна
-
   useEffect(() => {
     const checkLocalStorage = setInterval(() => {
       console.log("длина LocalStorage: ", JSON.parse(localStorage.getItem("soLonelyChat")).length, "из SetInterval");
@@ -58,8 +60,8 @@ const Chat = ({ name }) => {
       setText("");
     }
   };
-  //*createMessageList
 
+  //*создание нового сообщения
   const createMessageList = () => {
     setMessageList([...messageList, { name: name, text: text, id: uuidv4() }]);
   };
