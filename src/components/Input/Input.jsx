@@ -15,7 +15,15 @@ const Input = ({ value, setValue, text }) => {
 
   return (
     <div className="input-container">
-      <input id="inputName" className="input" type="text" placeholder=" " value={value} onChange={handleChange} />
+      <input
+        id="inputName"
+        className="input"
+        type="text"
+        autoComplete="off"
+        placeholder=" "
+        value={value}
+        onChange={handleChange}
+      />
       <div className="cut"></div>
       <label htmlFor="inputName" className="placeholder">
         {text}
