@@ -8,3 +8,10 @@
 
   width: 100%;
 }
+
+@media (max-width: 768px) {
+  .chat__form {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+}

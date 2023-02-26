@@ -24,15 +24,6 @@
   &__text {
     font-size: 22px;
   }
-
-  &__form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: flex-start;
-
-    width: 100%;
-  }
 }
 
 @media (max-width: 768px) {

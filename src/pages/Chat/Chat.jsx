@@ -2,9 +2,9 @@ import React, { useState, useEffect, useRef } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 import ChatField from "../../components/ChatField/ChatField";
+import ChatForm from "../../components/ChatForm/ChatForm";
 
 import "./chat.scss";
-import ChatForm from "../../components/ChatForm/ChatForm";
 
 const Chat = ({ name }) => {
   const [text, setText] = useState("");
@@ -41,7 +41,7 @@ const Chat = ({ name }) => {
       setMessageList(() => {
         return messageList.length !== JSON.parse(localStorage.getItem("soLonelyChat")).length
           ? JSON.parse(localStorage.getItem("soLonelyChat"))
-          : messageList; //!bad
+          : messageList; //!bad?
       });
     }, 1000);
 

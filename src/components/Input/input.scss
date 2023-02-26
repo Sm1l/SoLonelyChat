@@ -94,5 +94,26 @@
 @media (max-width: 768px) {
   .input-container {
     margin-top: 10px;
+    font-size: inherit;
+    height: 35px;
+  }
+  .input {
+    padding: 5px;
+    font-size: inherit;
+  }
+  .cut {
+    top: -20px;
+    width: 120px;
+    height: 14px;
+  }
+
+  .placeholder {
+    top: 10px;
+    left: 20px;
+    font-size: inherit;
+  }
+  .input:focus ~ .placeholder,
+  .input:not(:placeholder-shown) ~ .placeholder {
+    transform: translateY(-24px) translateX(10px) scale(0.6);
   }
 }
