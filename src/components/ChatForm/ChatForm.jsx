@@ -8,7 +8,7 @@ const ChatForm = ({ name, text, setText, submitSendClickHandle }) => {
   return (
     <form action="" className="chat__form" onSubmit={submitSendClickHandle}>
       <Input value={text} setValue={setText} text={`${name} is typing...`} />
-      <Button text="Send Message" type="submit" />
+      <Button text="Send Message" type="submit" buttonClass="sendbutton" />
     </form>
   );
 };
