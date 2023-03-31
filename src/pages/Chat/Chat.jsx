@@ -28,6 +28,7 @@ const Chat = ({ name }) => {
 
   useEffect(() => {
     updateLocalStorage();
+    console.log("update");
     scrollToBottom();
   }, [messageList]);
 
@@ -38,17 +39,25 @@ const Chat = ({ name }) => {
       // console.log("длина messageList: ", messageList.length, "из SetInterval");
       console.log("Я проверяю новые сообщения");
 
-      setMessageList(() => {
-        return messageList.length !== JSON.parse(localStorage.getItem("soLonelyChat")).length
+      setMessageList((freshMessageList) => {
+        return freshMessageList.length !== JSON.parse(localStorage.getItem("soLonelyChat")).length
           ? JSON.parse(localStorage.getItem("soLonelyChat"))
-          : messageList; //!bad?
+          : freshMessageList;
       });
     }, 1000);
 
-    return () => {
-      clearInterval(checkLocalStorage); //!рассмотреть
-    };
-  }, [messageList]);
+    //   setMessageList(() => {
+    //     return messageList.length !== JSON.parse(localStorage.getItem("soLonelyChat")).length
+    //  JSON.parse(localStorage.getItem("soLonelyChat"))
+    //       : messageList;
+    //   });
+    // }, 1000);
+
+    // return () => {
+    //   clearInterval(checkLocalStorage); //!рассмотреть
+    //   console.log("clear");
+    // };
+  }, []);
 
   const submitSendClickHandle = (e) => {
     e.preventDefault();
